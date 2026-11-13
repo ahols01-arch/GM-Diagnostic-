@@ -139,7 +139,7 @@ class MainActivity : Activity() {
     }
     private fun terminal() {
         addText("Terminal sends raw ELM327 / OBD commands. Commands should end in carriage return.")
-        val field=EditText(this).apply { hint="Example: 010C"; singleLine=true }
+        val field=EditText(this).apply { hint="Example: 010C"; setSingleLine(true) }
         root.addView(field)
         addButton("Send command") { send(field.text.toString().trim()+"\r") }
         addButton("ATZ reset") { send("ATZ\r") }
